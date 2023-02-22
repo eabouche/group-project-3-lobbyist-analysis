@@ -150,7 +150,7 @@ function init() {
     const firstSample = sampleNames[0];
     buildMap(firstSample);
     buildMetadata(firstSample);
-    buildCharts(firstSample);
+    // buildCharts(firstSample);
     
   });
 }
@@ -158,7 +158,8 @@ function init() {
 function optionChanged(newSample) {
 // Fetch new data each time a new sample is selected
 // buildCharts(newSample);
-// buildMetadata(newSample);
+ buildMetadata(newSample);
+ buildMap(newSample);
 }
 
 // Initialize the dashboard
