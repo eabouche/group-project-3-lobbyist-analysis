@@ -116,8 +116,8 @@ d3.json("data/lobbyists.json").then((data) => {
 
 function optionChanged(newSample) {
 // Fetch new data each time a new sample is selected
-buildCharts(newSample);
-buildMetadata(newSample);
+// buildCharts(newSample);
+// buildMetadata(newSample);
 }
 
 // Initialize the dashboard
