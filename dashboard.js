@@ -2,7 +2,7 @@
 function buildMetadata(sample) {
   d3.json("data/lobbyists.json").then((data) => {
     //var metadata= data.metadata;
-    var resultsarray= metadata.filter(sampleobject => 
+    var resultsarray= data.filter(sampleobject => 
       sampleobject.last_name == sample);
     var result= resultsarray[0]
     var panel = d3.select("#sample-metadata");
@@ -18,12 +18,51 @@ function buildMetadata(sample) {
   });
 }
 
+function buildMap(sample){
+
+  d3.json("data/lobbyists.json").then((importedData) => {
+    //console.log(importedData);
+    let data = importedData;
+  
+    // console.log(data);
+  
+    // Create a map object.
+    var myMap = L.map("map", {
+      center: [37.09, -95.71],
+      zoom: 5
+    });
+  
+    // Add a tile layer.
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(myMap);
+  
+    // Add lobbyist markers
+    for (var i = 0; i < data.length; i++) {
+      var lobbyist = data[i];
+      if(lobbyist.last_name = sample){
+         var marker = L.marker([lobbyist.lat, lobbyist.long])
+          .bindPopup(`<h1>${lobbyist.first_name} ${lobbyist.last_name}</h1> <hr> <h3>Address: ${lobbyist.address_1}, <br/> ${lobbyist.city},
+            ${lobbyist.state} ${lobbyist.zip}</h3> <h4>emal: ${lobbyist.email} </br> phone: ${lobbyist.phone} </br> employer: ${lobbyist.employer_name}</h4>`)
+          .addTo(myMap);
+          marker._icon.classList.add("huechange");
+      }
+      else {
+        L.marker([lobbyist.lat, lobbyist.long])
+          .bindPopup(`<h1>${lobbyist.first_name} ${lobbyist.last_name}</h1> <hr> <h3>Address: ${lobbyist.address_1}, <br/> ${lobbyist.city},
+            ${lobbyist.state} ${lobbyist.zip}</h3> <h4>emal: ${lobbyist.email} </br> phone: ${lobbyist.phone} </br> employer: ${lobbyist.employer_name}</h4>`)
+          .addTo(myMap);
+    }}
+  
+  });
+}
+
 //function buildGauge(wfreq) {}
 
 function buildCharts(sample) {
 
 // Use `d3.json` to fetch the sample data for the plots
-d3.json(sampleurl).then((data) => {
+d3.json("data/lobbyists.json").then((data) => {
   var samples= data.samples;
   var resultsarray= samples.filter(sampleobject => 
       sampleobject.id == sample);
@@ -89,29 +128,31 @@ d3.json(sampleurl).then((data) => {
 
 function init() {
 // Grab a reference to the dropdown select element
-var selector = d3.select("#selDataset");
+  var selector = d3.select("#selDataset");
 
-// Use the list of sample names to populate the select options
-d3.json("data/lobbyists.json").then((data) => {
-  // var sampleNames = data.last_name;
-  var sampleNames = []
-  data.forEach((sample) => {
-    sampleNames.push(sample.last_name)
-  })
-  console.log('hello')
-  console.log(sampleNames)
-  sampleNames.forEach((sample) => {
-    selector
-      .append("option")
-      .text(sample)
-      .property("value", sample);
+  // Use the list of sample names to populate the select options
+  d3.json("data/lobbyists.json").then((data) => {
+    // var sampleNames = data.last_name;
+    var sampleNames = []
+    data.forEach((sample) => {
+      sampleNames.push(sample.last_name)
+    })
+    console.log('hello')
+    console.log(sampleNames)
+    sampleNames.forEach((sample) => {
+      selector
+        .append("option")
+        .text(sample)
+        .property("value", sample);
+    });
+
+    // Use the first sample from the list to build the initial plots
+    const firstSample = sampleNames[0];
+    buildMap(firstSample);
+    buildMetadata(firstSample);
+    buildCharts(firstSample);
+    
   });
-
-  // Use the first sample from the list to build the initial plots
-  const firstSample = sampleNames[0];
-  buildCharts(firstSample);
-  buildMetadata(firstSample);
-});
 }
 
 function optionChanged(newSample) {
