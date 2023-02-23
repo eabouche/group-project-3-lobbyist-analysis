@@ -4,7 +4,7 @@ const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/
 function buildMetadata(newSample){
 
     // Fetch the json data and console log it
-    d3.json("lobbyists.json").then(function (data){
+    d3.json("data/lobbyists.json").then(function (data){
         console.log('Samples data:', data);
         // let metadata = data.metadata;
         let lobbyist = data
@@ -50,7 +50,7 @@ function buildMetadata(newSample){
 // Build gauge chart accessing Metadata property
 function buildGaugeChart(sample){
     // Fetch the json data and console log it
-    d3.json("compensation.json").then(function (data){
+    d3.json("data/compensation.json").then(function (data){
         //console.log('Samples data:', data);
         let metadata = data;
 
@@ -122,7 +122,7 @@ function buildGaugeChart(sample){
 
 // Create a function to build the charts
 function buildCharts(sample) {
-	d3.json("compensation.json").then(function(data){
+	d3.json("data/compensation.json").then(function(data){
 
         console.log("compensation file", data); 
         console.log('new sample',sample);
@@ -223,7 +223,7 @@ function init() {
     console.log("Init Selector", selector);
   
     // Use the list of sample names to populate the select options
-    d3.json("lobbyists.json").then(function(data){
+    d3.json("data/lobbyists.json").then(function(data){
 
       console.log('Lobyist data:', data);
 
