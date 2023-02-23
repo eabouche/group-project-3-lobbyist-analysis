@@ -135,7 +135,7 @@ function init() {
     // var sampleNames = data.last_name;
     var sampleNames = []
     data.forEach((sample) => {
-      sampleNames.push(sample.last_name)
+      sampleNames.push(`${sample.first_name} ${sample.last_name}`)
     })
     console.log('hello')
     console.log(sampleNames)
@@ -147,7 +147,7 @@ function init() {
     });
 
     // Use the first sample from the list to build the initial plots
-    const firstSample = sampleNames[0];
+    const firstSample = data[0].lobbyist_id //sampleNames[0];  
     buildMap(firstSample);
     buildMetadata(firstSample);
     // buildCharts(firstSample);
