@@ -61,10 +61,56 @@ function buildContributionChart(sample){
         console.log('Contribution filter', resultArray);
         console.log('Contribution [0]', result);
    
-  
+        let totalContributionAmount = 0
+        for (let i = 0; i < resultArray.length; i++){
+            totalContributionAmount += resultArray[i].amount;
+        };
+
+        console.log('totalContributionAmount', totalContributionAmount);
+
+        let frequency = parseFloat(totalContributionAmount);
+
+        let gaugeData = {
+            title: {text: "<b>Lobbyist Total Contributions</b> <br> since 2019"},
+            type : "indicator",
+            mode : "gauge+number" ,
+            value : frequency,
+            domain : {x: [0,1], y:[0,1]},
+            gauge : {
+                axis : {range: [null,100000]},
+                bar : {color: "#1d0066"},
+                steps : [
+                    {range: [0,2],color:"#ffffd4"},
+                    {range: [2,4],color:"#eaf4f6"},
+                    {range: [4,6],color:"#d6e9ed"},
+                    {range: [6,8],color:"#c1dee5"},
+                    {range: [8,10],color:"#add4dc"}
+                ],
+
+            }
+        };
+
+        let gaugeDataArray = [gaugeData];
+
+        // Create layout
+        let gaugeLayout = {
+            width: 500,
+            height: 400,
+            margin: {
+                t:  25,
+                r: 50,
+                l: 50,
+                b: 25
+            },
+            font: {
+                color: "darklavender",
+                familiy:"Tahoma"
+            }
+        };
+
+        Plotly.newPlot("contribution-chart",gaugeDataArray, gaugeLayout);
+
     });
-
-
 
 };
 
@@ -123,8 +169,8 @@ function buildGaugeChart(sample){
             height: 400,
             margin: {
                 t:  25,
-                r: 25,
-                l: 25,
+                r: 50,
+                l: 50,
                 b: 25
             },
             font: {
@@ -194,7 +240,7 @@ function buildCharts(sample) {
 
         // Do layout
         bubbleLayout = {
-            title: "Lobbyist compensations over time",
+            title: "<b>Lobbyist compensations over time</b>",
             hovermode: "closest",
             xaxis : {title: "year"},
             yaxis : {title: "Compensation Amount"}
@@ -205,13 +251,16 @@ function buildCharts(sample) {
 		
 		// Build a Bar Chart
 
+        // Use `.html("") to clear any existing metadata
+        //d3.select('#bar').html("");
+
         // let yvalues = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
         // let xvalues = sample_values.slice(0,10).reverse();
         // let labelValues = otu_labels.slice(0,10).reverse();
 
-        let yvalues = resultArray.slice(0,10).map(item => item.client_name);
-        let xvalues = resultArray.slice(0,10).map(item => item.compensation_amount);
-        let labelValues = resultArray.slice(0.10).map(item => item.employer_name);
+        let yvalues = resultArray.map(item => item.client_name);    //.slice(0,10)
+        let xvalues = resultArray.map(item => item.compensation_amount);    //.slice(0,10)
+        let labelValues = resultArray.map(item => item.employer_name);      //.slice(0.10)
 
         console.log('yvalues:', yvalues);
         console.log('xvalues:', xvalues);
@@ -228,7 +277,15 @@ function buildCharts(sample) {
 
         // Set the layout
         let barLayout = {
-            title: "Top Clients"
+            title: "Lobbyist Clients",
+            width: 600,
+            height: 600,
+            margin: {
+                t:  100,
+                r: 25,
+                l: 300,
+                b: 25
+            },
         };
 
         Plotly.newPlot("bar",barChartArray, barLayout);
@@ -250,11 +307,14 @@ function init() {
 
       let sampleNames = data;
       //console.log('Lobbyist names', sampleNames);
+
+      sampleNames.sort();
+      console.log('sampleNames sorted',sampleNames);
   
       // Use a for loop to append to the 'selector' object 
       for (let i = 0; i < sampleNames.length; i++){
         // append to the selector object
-        selector.append("option").text(`${sampleNames[i].first_name} ${sampleNames[i].last_name}`).property("value",sampleNames[i].lobbyist_id);
+        selector.append("option").text(`${sampleNames[i].last_name}, ${sampleNames[i].first_name}`).property("value",sampleNames[i].lobbyist_id);
       };
   
       // Use the first sample from the list to build the initial plots
