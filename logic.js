@@ -17,13 +17,22 @@ d3.json("data/lobbyists.json").then((importedData) => {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(myMap);
 
-  // Add lobbyist markers
+  // Add lobbyist markers as cluster
+  var markers = L.markerClusterGroup();
+
   for (var i = 0; i < data.length; i++) {
+
     var lobbyist = data[i];
-    L.marker([lobbyist.lat, lobbyist.long])
+
+    if (lobbyist) {
+
+      markers.addLayer(L.marker([lobbyist.lat, lobbyist.long])
       .bindPopup(`<h1>${lobbyist.first_name} ${lobbyist.last_name}</h1> <hr> <h3>Address: ${lobbyist.address_1}, <br/> ${lobbyist.city},
-         ${lobbyist.state} ${lobbyist.zip}</h3> <h4>emal: ${lobbyist.email} </br> phone: ${lobbyist.phone} </br> employer: ${lobbyist.employer_name}</h4>`)
-      .addTo(myMap);
+      ${lobbyist.state} ${lobbyist.zip}</h3> <h4>emal: ${lobbyist.email} </br> phone: ${lobbyist.phone} </br> employer: ${lobbyist.employer_name}</h4>`))
+
+    }
+
   }
+  myMap.addLayer(markers);
 
 });
