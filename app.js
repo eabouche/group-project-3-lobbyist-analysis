@@ -46,6 +46,27 @@ function buildMetadata(newSample){
     // otuSampleValues.push(resultSample.sample_values);
     // console.log(otuSampleValues);\
 
+function buildContributionChart(sample){
+    d3.json("data/lobbyist_contribution_info.json").then(function(data){
+
+        console.log("contribution data", data); 
+
+        let contribution_df = data;
+
+        console.log("contribution lobbyist id", sample);
+
+        // filter the data for the object with the desired sample number
+        let resultArray = contribution_df.filter(id => id.lobbyist_id == sample);
+        let result = resultArray[0];
+        console.log('Contribution filter', resultArray);
+        console.log('Contribution [0]', result);
+   
+  
+    });
+
+
+
+};
 
 // Build gauge chart accessing Metadata property
 function buildGaugeChart(sample){
@@ -241,6 +262,7 @@ function init() {
       buildCharts(firstSample);              
       buildMetadata(firstSample);
       buildGaugeChart(firstSample);
+      buildContributionChart(firstSample);
     });
   };
 
@@ -252,6 +274,7 @@ function optionChanged(newSample) {
     buildCharts(newSample);      
     buildMetadata(newSample);
     buildGaugeChart(newSample);
+    buildContributionChart(newSample);
   };
   
 // Initialize the dashboard
