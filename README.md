@@ -2,7 +2,7 @@
 
 
 
-<div><img align=left width=200px height=120px src="https://github.com/geethakan/proj2-ETL-foodinspection/blob/main/Images/inspections.jpg">
+<div><img align=left width=200px height=120px src="https://github.com/eabouche/group-project-3-lobbyist-analysis/blob/main/images/lobbyist_img.png">
   
 # JavaScript Group Project - Lobbyist Analysis
   
