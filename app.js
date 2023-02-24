@@ -116,6 +116,46 @@ function buildContributionChart(sample){
 
         Plotly.newPlot("contribution-chart",gaugeDataArray, gaugeLayout);
 
+        // Build a Bar Chart for lobbyist contributions to politicians and organizations
+
+        // Use `.html("") to clear any existing metadata
+        //d3.select('#bar').html("");
+
+        // let yvalues = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
+        // let xvalues = sample_values.slice(0,10).reverse();
+        // let labelValues = otu_labels.slice(0,10).reverse();
+
+        let yvalues = resultArray.map(item => item.recipient);    //.slice(0,10)
+        let xvalues = resultArray.map(item => item.amount);    //.slice(0,10)
+        let labelValues = resultArray.map(item => item.recipient);      //.slice(0.10)
+
+        console.log('yvalues:', yvalues);
+        console.log('xvalues:', xvalues);
+
+        let barChart = {
+            x : xvalues,
+            y : yvalues,
+            text : labelValues,
+            type : 'bar',
+            orientation : 'h' 
+        };
+
+        let barChartArray = [barChart];
+
+        // Set the layout
+        let barLayout = {
+            title: "Lobbyist Contributions",
+            width: 1000,
+            height: 500,
+            margin: {
+                t:  100,
+                r: 25,
+                l: 300,
+                b: 25
+            },
+        };
+
+        Plotly.newPlot("contribution-bar",barChartArray, barLayout);
     });
 
 };
@@ -255,7 +295,7 @@ function buildCharts(sample) {
 		// Dispay bubble plot
 		Plotly.newPlot("bubble",bubbleChartDataArray, bubbleLayout);
 		
-		// Build a Bar Chart
+		// Build a Bar Chart for lobbyist compensation from clients
 
         // Use `.html("") to clear any existing metadata
         //d3.select('#bar').html("");
