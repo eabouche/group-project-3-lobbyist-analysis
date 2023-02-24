@@ -25,6 +25,12 @@ function buildMetadata(newSample){
         // Hint: Inside the loop, you will need to use D3 to append new
         // tags for each key-value in the metadata 
         for (key in result){
+            if (key !== 'lobbyist_id' &&
+                key !== 'employer_id' &&
+                key !== 'year' &&
+                key !== 'fax' &&
+                key !== 'lat' &&
+                key !== 'long')
             // This line of code takes d3 selection and appends text to it
             d3.select('#sample-metadata').append("h5").text(`${key} : ${result[key]}`);
 
