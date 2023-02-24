@@ -84,13 +84,13 @@ function buildContributionChart(sample){
             domain : {x: [0,1], y:[0,1]},
             gauge : {
                 axis : {range: [null,100000]},
-                bar : {color: "#1d0066"},
+                bar : {color: "#0b9e17"},
                 steps : [
-                    {range: [0,2],color:"#ffffd4"},
-                    {range: [2,4],color:"#eaf4f6"},
-                    {range: [4,6],color:"#d6e9ed"},
-                    {range: [6,8],color:"#c1dee5"},
-                    {range: [8,10],color:"#add4dc"}
+                    {range: [0,20000],color:"#89c9e0"},
+                    {range: [20000,40000],color:"#f2b552"},
+                    {range: [40000,60000],color:"#b0f056"},
+                    {range: [60000,80000],color:"#75f056"},
+                    {range: [80000,100000],color:"#17b329"}
                 ],
 
             }
@@ -195,13 +195,13 @@ function buildGaugeChart(sample){
             domain : {x: [0,1], y:[0,1]},
             gauge : {
                 axis : {range: [null,1000000]},
-                bar : {color: "#1d0066"},
+                bar : {color: "#0b9e17"},
                 steps : [
-                    {range: [0,2],color:"#ffffd4"},
-                    {range: [2,4],color:"#eaf4f6"},
-                    {range: [4,6],color:"#d6e9ed"},
-                    {range: [6,8],color:"#c1dee5"},
-                    {range: [8,10],color:"#add4dc"}
+                    {range: [0,200000],color:"#89c9e0"}, 
+                    {range: [200000,400000],color:"#f2b552"}, 
+                    {range: [400000,600000],color:"#b0f056"},
+                    {range: [600000,800000],color:"#75f056"},
+                    {range: [800000,1000000],color:"#17b329"}
                 ],
 
             }
