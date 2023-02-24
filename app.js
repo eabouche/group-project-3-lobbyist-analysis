@@ -100,7 +100,7 @@ function buildContributionChart(sample){
 
         // Create layout
         let gaugeLayout = {
-            width: 500,
+            width: 400,
             height: 400,
             margin: {
                 t:  25,
@@ -171,7 +171,7 @@ function buildGaugeChart(sample){
 
         // Create layout
         let gaugeLayout = {
-            width: 500,
+            width: 400,
             height: 400,
             margin: {
                 t:  25,
@@ -246,7 +246,7 @@ function buildCharts(sample) {
 
         // Do layout
         bubbleLayout = {
-            title: "<b>Lobbyist compensations over time</b>",
+            title: "<b>Lobbyist Compensation Over Time</b>",
             hovermode: "closest",
             xaxis : {title: "year"},
             yaxis : {title: "Compensation Amount"}
@@ -284,8 +284,8 @@ function buildCharts(sample) {
         // Set the layout
         let barLayout = {
             title: "Lobbyist Clients",
-            width: 600,
-            height: 600,
+            width: 1000,
+            height: 500,
             margin: {
                 t:  100,
                 r: 25,
