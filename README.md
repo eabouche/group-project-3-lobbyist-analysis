@@ -1,20 +1,17 @@
-# group-project-3-lobbyist-analysis
-
-
 
 <div><img align=left width=200px height=120px src="https://github.com/eabouche/group-project-3-lobbyist-analysis/blob/main/images/lobbyist_img.png">
   
-# JavaScript Group Project - Lobbyist Analysis
+# Group Project 3 - Lobbyist Analysis
   
-This is a mini project done as a group and purposed to practice teamwork and collaborative problem-solving. Timeframe was very limited and division of labor made it possible to accomplish the task.</div>
+This was a group project in which our team picked the subject, found the data sets to use in the city of chicago data portal, and had to quickly collect the datasets via APIs, clean the data, store it in a datbase, and use it to build an insightful dashboard and a visualization map of the dataset.</div>
 
 
 ## Contributors
   
-- Heather Robson
+- Sandhya Datla
+- Andrew Kang
 - Enrique Bouche
-- Camille Jensen
-- Geetha Kandukuri
+- Daniel Andreou
   
   
 ## DataSets
