@@ -33,12 +33,21 @@ Dataset #1 - DESCRIPTION. Dataset #2 - DESCRIPTION ...</div>
 
 ## Questions we are trying to answer
 
-- CHANGE ME
+Are there certain geographic concentrations of lobbyists?
+
+Who are the most well compensated lobbyists and where are they located?
+
+Which lobbyist is distributing the most lobbying funds?
+
+What companies are the most prevalent in lobbying in general and for the above individuals
 
 ## Steps to cleanup the data
 
-- Change me
-- Change me
+Data was extracted from 3 tables in the Chicago Data Portal. These are the Lobbyist, Contribution, and Compensation table.
+Initial stages of cleanup involve extracting the data via API into Pandas dataframes and then converting the datatypes into the
+proper forms - dates, and integers mostly. Answering the question of the 'who are the most wellc ompensated lobbyists and where are they located' and
+'are there certain geographic concentration of lobbyists?' involved using GeoApify to convert the street address information provided in the Lobbyist Table
+to latitude and longitude coordinates. The Lobbyist and Compensation table were additionally merged for the well compensated lobbyist locations.
 
 ## Project Results - Dashboard
 
