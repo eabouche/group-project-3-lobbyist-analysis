@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS lobbyists;
 DROP TABLE IF EXISTS contribution;
 DROP TABLE IF EXISTS compensation;
-DROP TABLE IF EXISTS lobbyist_employer_client_rel;
+-- DROP TABLE IF EXISTS lobbyist_employer_client_rel; 
 
 -- Create main tables
 CREATE TABLE lobbyists (
@@ -50,24 +50,24 @@ CREATE TABLE compensation (
     period_start DATE
 );
 
-CREATE TABLE lobbyist_employer_client_rel (
-	client_id INT,
-	client_name VARCHAR,
-	employer_id INT,
-	employer_name VARCHAR,
-	lobbyist_first_name VARCHAR,
-	lobbyist_id INT,
-	lobbyist_last_name VARCHAR,
-	lobbyist_middle_initial VARCHAR,
-	lobbyist_salutation VARCHAR,
-	year INT
-);
+-- CREATE TABLE lobbyist_employer_client_rel (
+-- 	client_id INT,
+-- 	client_name VARCHAR,
+-- 	employer_id INT,
+-- 	employer_name VARCHAR,
+-- 	lobbyist_first_name VARCHAR,
+-- 	lobbyist_id INT,
+-- 	lobbyist_last_name VARCHAR,
+-- 	lobbyist_middle_initial VARCHAR,
+-- 	lobbyist_salutation VARCHAR,
+-- 	year INT
+-- );
 
 -- Data loaded validation
 Select * From lobbyists;
 Select * From contribution;
 Select * From compensation;
-Select * From lobbyist_employer_client_rel;
+--Select * From lobbyist_employer_client_rel;
 
 -- Look for duplication
 Select count(*), count(DISTINCT lobbyist_id), count(DISTINCT employer_id) From lobbyists;
