@@ -15,7 +15,7 @@ This was a group project in which our team picked the subject, found the data se
   
 ## Topic Chosen Description
 
-- DESC
+We decided to use the Chicago Data Portal to investigate lobbying activity within the city of Chicago.
 
 
 ## DataSets
@@ -36,8 +36,6 @@ Dataset #1 - DESCRIPTION. Dataset #2 - DESCRIPTION ...</div>
 Are there certain geographic concentrations of lobbyists?
 
 Who are the most well compensated lobbyists and where are they located?
-
-Which lobbyist is distributing the most lobbying funds?
 
 What companies are the most prevalent in lobbying in general and for the above individuals
 
