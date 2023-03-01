@@ -23,9 +23,9 @@ We decided to use the Chicago Data Portal to investigate lobbying activity withi
 <div> Source: <a href="https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5" target="_blank">Chicago Data Portal - CHANGE ME.</a> 
 Dataset #1 - DESCRIPTION. Dataset #2 - DESCRIPTION ...</div>
   
-  | Dataset   | Description              |
-  | ------------- | ------------------------ |
-  | Lobbyist Table | Contains a list of all registered lobbyists authorized to work with politicians in the city of Chicago | 
+  | Dataset   | Description              |  Link |
+  | ------------- | ------------------------ |----------|
+  | Lobbyist Table | Contains a list of all registered lobbyists authorized to work with politicians in the city of Chicago |  Source: <a href="https://data.cityofchicago.org/Ethics/Lobbyist-Data-Lobbyists/tq3e-t5yq" target="_blank">Chicago Data Portal </a> |
   | Contribution Table      | Contains all contributions made to politicians in the city of Chicago |            
   | Compensation Table      | Contains a list of all payments to lobbyists and who the clients making the payments are |
   
