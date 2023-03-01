@@ -23,11 +23,11 @@ We decided to use the Chicago Data Portal to investigate lobbying activity withi
 <div> Source: <a href="https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5" target="_blank">Chicago Data Portal - CHANGE ME.</a> 
 Dataset #1 - DESCRIPTION. Dataset #2 - DESCRIPTION ...</div>
   
-  | Column Name   | Type    | Description              |
-  | ------------- | ------- | ------------------------ |
-  | Inspection Id | Int     | Unique Id per inspection 
-  | DBA Name      | String  | Business Name            
-  | AKA Name      | String  | Also Known As Name
+  | Dataset   | Description              |
+  | ------------- | ------------------------ |
+  | Lobbyist Table | Unique Id per inspection 
+  | Contribution Table      | Business Name            
+  | Compensation Table      | Also Known As Name
   
   
 
