@@ -3,6 +3,8 @@
   
 # Group Project 3 - Lobbyist Analysis
   
+  To interact with the dashboard please visit the <a href="https://eabouche.github.io/group-project-3-lobbyist-analysis/" target="_blank">Lobbyist Dashboard </a>
+  
 This was a group project in which our team picked the subject, found the data sets to use in the city of chicago data portal, and had to quickly collect the datasets via APIs, clean the data, store it in a datbase, and use it to build an insightful dashboard and a visualization map of the dataset.  Project duration was 2 weeks.</div>
 
 
