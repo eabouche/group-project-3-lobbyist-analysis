@@ -49,9 +49,6 @@ to latitude and longitude coordinates. The Lobbyist and Compensation table were 
 
 ## Project Results - Dashboard
 
-- CHANGE ME
+![image](https://user-images.githubusercontent.com/115383317/222295282-28db5464-ccb2-40ae-970d-ed4bb01b8755.png)
 
 
-## Project Limitations
-
-- DESCRIPTION.
