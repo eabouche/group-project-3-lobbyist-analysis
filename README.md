@@ -20,14 +20,14 @@ We decided to use the Chicago Data Portal to investigate lobbying activity withi
 
 ## DataSets
 
-<div> Source: <a href="https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5" target="_blank">Chicago Data Portal - CHANGE ME.</a> 
-Dataset #1 - DESCRIPTION. Dataset #2 - DESCRIPTION ...</div>
+<div> Main Source: <a href="https://data.cityofchicago.org/" target="_blank"> The Chicago Data Portal.</a> 
+</div>
   
   | Dataset   | Description              |  Link |
   | ------------- | ------------------------ |----------|
-  | Lobbyist Table | Contains a list of all registered lobbyists authorized to work with politicians in the city of Chicago |  Source: <a href="https://data.cityofchicago.org/Ethics/Lobbyist-Data-Lobbyists/tq3e-t5yq" target="_blank">Chicago Data Portal </a> |
-  | Contribution Table      | Contains all contributions made to politicians in the city of Chicago |            
-  | Compensation Table      | Contains a list of all payments to lobbyists and who the clients making the payments are |
+  | Lobbyist Table | Contains a list of all registered lobbyists authorized to work with politicians in the city of Chicago |  <a href="https://data.cityofchicago.org/Ethics/Lobbyist-Data-Lobbyists/tq3e-t5yq" target="_blank">Lobbyist Data - Lobbyists </a> |
+  | Contribution Table      | Contains all contributions made to politicians in the city of Chicago |   <a href="https://data.cityofchicago.org/Ethics/Lobbyist-Data-Contributions/p9p7-vfqc" target="_blank">Lobbyist Data - Contributions </a> |         
+  | Compensation Table      | Contains a list of all payments to lobbyists and who the clients making the payments are | <a href="https://data.cityofchicago.org/Ethics/Lobbyist-Data-Compensation/dw2f-w78u" target="_blank">Lobbyist Data - Compensation </a> |
   
   
 
